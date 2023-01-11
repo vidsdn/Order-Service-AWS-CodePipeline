@@ -19,4 +19,9 @@ public class OrderDao {
 				new Order(809, "headset", 1, 1799))
 				.collect(Collectors.toList());
 	}
+	
+	public Order getOrderById(int id) {
+		
+		return getOrders().stream().filter(O -> O.getId() == id).findAny().get();
+	}
 }
